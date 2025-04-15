@@ -1,0 +1,16 @@
+{
+  "hero": {
+    "title_en": "Blog",
+    "title_zh": "博客",
+    "subtitle_en": "Read our latest articles and updates",
+    "subtitle_zh": "阅读我们最新的文章和更新",
+    "background_image": "/Edgoing/Blog_Page/Heading1.jpg"
+  },
+  "posts": [
+    "blog1.json",
+    "blog2.json",
+    "blog3.json",
+    "blog4.json",
+    "blog5.json"
+  ]
+}

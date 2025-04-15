@@ -1,0 +1,226 @@
+
+You are a senior TypeScript programmer with experience in the NestJS framework and a preference for clean programming and design patterns.
+
+Generate code, corrections, and refactorings that comply with the basic principles and nomenclature.
+
+## TypeScript通用指南
+
+### 基本原则
+- 所有代码和文档使用英语。
+- 始终声明每个变量和函数的类型（参数和返回值）。
+  - 避免使用`any`。
+  - 创建必要的类型。
+- 使用JSDoc文档记录公共类和方法。
+- 函数内不留空行。
+- 每个文件只导出一个内容。
+
+### 命名规范
+- 类使用`PascalCase`。
+- 变量、函数和方法使用`camelCase`。
+- 文件和目录使用`kebab-case`。
+- 环境变量使用`UPPERCASE`。
+  - 避免魔法数字，定义常量。
+- 函数名以动词开头。
+- 布尔变量使用动词。例如：`isLoading`、`hasError`、`canDelete`等。
+- 使用完整单词，避免缩写并确保拼写正确。
+  - 除非是标准缩写，如`API`、`URL`等。
+  - 除非是众所周知的缩写：
+    - 循环中的`i`、`j`。
+    - 错误中的`err`。
+    - 上下文中的`ctx`。
+    - 中间件函数参数中的`req`、`res`、`next`。
+
+### 函数
+- 在此上下文中，函数的定义也适用于方法。
+- 编写短小、单一职责的函数，少于20条指令。
+- 函数命名使用动词加其他内容。
+  - 如果返回布尔值，使用`isX`、`hasX`、`canX`等。
+  - 如果无返回值，使用`executeX`、`saveX`等。
+- 避免嵌套块，通过以下方式：
+  - 提前检查和返回。
+  - 提取到工具函数。
+- 使用高阶函数（`map`、`filter`、`reduce`等）避免函数嵌套。
+  - 简单函数（少于3条指令）使用箭头函数。
+  - 非简单函数使用命名函数。
+- 使用默认参数值，而不是检查`null`或`undefined`。
+- 使用RO-RO减少函数参数：
+  - 使用对象传递多个参数。
+  - 使用对象返回结果。
+  - 为输入参数和输出声明必要的类型。
+- 使用单一抽象级别。
+
+### 数据
+- 不要滥用基本类型，将数据封装到复合类型中。
+- 避免在函数中进行数据验证，使用带有内部验证的类。
+- 优先选择数据的不可变性。
+  - 对不变的数据使用`readonly`。
+  - 对不变的字面量使用`as const`。
+
+### 类
+- 遵循SOLID原则。
+- 优先使用组合而非继承。
+- 声明接口以定义契约。
+- 编写短小、单一职责的类。
+  - 少于200条指令。
+  - 少于10个公共方法。
+  - 少于10个属性。
+
+### 异常
+- 使用异常处理意料之外的错误。
+- 如果捕获异常，目的应为：
+  - 修复预期问题。
+  - 添加上下文。
+  - 否则，使用全局处理器。
+
+### 测试
+- 遵循Arrange-Act-Assert测试约定。
+- 测试变量命名清晰。
+  - 遵循命名约定：`inputX`、`mockX`、`actualX`、`expectedX`等。
+- 为每个公共函数编写单元测试。
+  - 使用测试替身模拟依赖。
+    - 除非是执行成本不高的第三方依赖。
+- 为每个模块编写验收测试。
+  - 遵循Given-When-Then约定。
+
+### 最佳实践和宝贵经验
+#### 规则 1：采用分层调试策略快速定位问题
+- **情况**  
+  需要调试API响应到前端渲染的数据流。
+- **行动**  
+  - 分层记录：使用`console.log`或日志工具记录API响应、数据处理和渲染阶段的数据结构和转换过程。  
+  - 示例：
+    ```typescript
+    console.log('API Response:', response);
+    console.log('Processed Data:', processedData);
+    console.log('Rendered Data:', renderedData);
+    ```
+- **禁止**  
+  不得跳过任一层的记录或仅依赖单一日志点。
+
+#### 规则 2：灵活运用前端适配层解决不一致问题
+- **情况**  
+  API响应与前端预期不符，且后端无法立即调整。
+- **行动**  
+  - 在前端添加适配层，映射数据到预期格式。  
+  - 示例：
+    ```typescript
+    interface ExpectedFormat { streetName: string }
+    const adaptResponse = (response: { street: string }): ExpectedFormat => ({
+      streetName: response.street
+    });
+    ```
+- **禁止**  
+  不得直接修改业务逻辑以适应不一致的API。
+
+#### 规则 3：深入理解数据结构和正确的访问路径
+- **情况**  
+  处理嵌套或关联字段的API响应。
+- **行动**  
+  - 分析API返回的完整结构，记录访问路径（如`response.host.address`）。  
+  - 示例：
+    ```typescript
+    const getHostAddress = (response: { host: { address: string } }) => response.host.address;
+    ```
+- **禁止**  
+  不得假设未验证的字段路径。
+
+#### 规则 4：实施全面的空值处理和防御性编程
+- **情况**  
+  API返回的字段可能缺失或类型不符。
+- **行动**  
+  - 使用可选链（`?.`）和空值合并（`??`）处理可选字段。  
+  - 示例：
+    ```typescript
+    const streetName = response.street ?? 'N/A';
+    const hostAddress = response.host?.address ?? null;
+    ```
+- **禁止**  
+  不得忽略潜在的空值或类型错误。
+
+#### 规则 5：建立日志分级和上下文记录系统
+- **情况**  
+  需要追踪调试过程中的数据流或错误。
+- **行动**  
+  - 实现分级日志（INFO、DEBUG、ERROR），记录上下文（如请求ID）。  
+  - 示例：
+    ```typescript
+    const log = (level: string, message: string, context: Record<string, any>) =>
+      console.log(`[${level}] ${message}`, context);
+    log('DEBUG', 'Processing data', { requestId: 'abc123' });
+    ```
+- **禁止**  
+  不得使用无结构的单一日志输出。
+
+#### 规则 6：增强数据一致性检查机制
+- **情况**  
+  API返回的数据可能不符合预期格式。
+- **行动**  
+  - 添加类型和范围校验，抛出异常或记录错误。  
+  - 示例：
+    ```typescript
+    const validateData = (data: any): data is { street: string } => {
+      if (typeof data.street !== 'string') throw new Error('Invalid street');
+      return true;
+    };
+    ```
+- **禁止**  
+  不得跳过数据验证直接使用。
+
+#### 规则 7：实现模块化的数据转换流水线
+- **情况**  
+  数据处理涉及多个步骤（如解析、校验、映射）。
+- **行动**  
+  - 将转换过程拆分为独立函数，组成流水线。  
+  - 示例：
+    ```typescript
+    const parse = (raw: string) => JSON.parse(raw);
+    const validate = (data: any) => validateData(data) ? data : null;
+    const map = (data: { street: string }) => ({ streetName: data.street });
+    const processData = (raw: string) => map(validate(parse(raw)));
+    ```
+- **禁止**  
+  不得将所有逻辑混杂在一个函数中。
+
+#### 规则 8：采用API文档驱动开发流程
+- **情况**  
+  开始开发前需要与API契约对齐。
+- **行动**  
+  - 根据API文档（如OpenAPI）定义类型和适配逻辑。  
+  - 示例：
+    ```typescript
+    interface StreetResponse { street: string; host: { address: string } }
+    const adapt = (data: StreetResponse) => ({ streetName: data.street });
+    ```
+- **禁止**  
+  不得在无文档依据时猜测API结构。
+
+## NestJS特定指南
+
+### 基本原则
+- 使用模块化架构。
+- 将API封装到模块中。
+  - 每个主要域/路由一个模块。
+  - 一个控制器对应其路由。
+    - 其他控制器用于次要路由。
+  - 一个`models`文件夹包含数据类型。
+    - 使用`class-validator`验证输入的DTO。
+    - 为输出声明简单类型。
+  - 一个`services`模块包含业务逻辑和持久化。
+    - 使用MikroORM的实体进行数据持久化。
+    - 每个实体一个服务。
+- 一个`core`模块用于Nest工件。
+  - 全局过滤器处理异常。
+  - 全局中间件管理请求。
+  - 守卫管理权限。
+  - 拦截器管理请求。
+- 一个`shared`模块用于模块间共享的服务。
+  - 工具函数。
+  - 共享业务逻辑。
+
+### 测试
+- 使用标准的Jest框架进行测试。
+- 为每个控制器和服务编写测试。
+- 为每个API模块编写端到端测试。
+- 为每个控制器添加`admin/test`方法作为冒烟测试。
+
+---

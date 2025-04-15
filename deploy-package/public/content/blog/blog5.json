@@ -1,0 +1,25 @@
+{
+    "post": {
+      "id": 5,
+      "title_en": "My First Overseas Adventure: A STEM Program in Japan",
+      "title_zh": "我的第一次海外冒险：日本的STEM项目",
+      "slug": "japan-stem-adventure",
+      "content_en": "When I first found out I was going to Japan for a STEM program, I was so excited but also really nervous. It was my first time traveling overseas, and I didn't know what to expect. My parents were worried, too. They kept asking me if I was ready and would be okay without them.\n\nBut after spending a week in Japan, I can honestly say it was one of the best experiences of my life, and my parents aren't worried anymore! The program was amazing. We did so many cool things, like visiting high-tech labs and learning about robotics. I even got to build my own mini robot! Japan's technology is so advanced—it felt like stepping into the future.\n\nOne of the highlights was visiting a science museum where we saw robots that could play sports and even have conversations. It was mind-blowing! I also loved how the program mixed learning with fun. We had workshops where we worked in teams to solve problems, and it was awesome to see how everyone's ideas came together.\n\nI made so many new friends from different countries, and we all bonded over our love for science and technology. It was cool to see how STEM brings people together, no matter where they're from. Of course, there were some challenges too. At first, I was a little homesick, and the language barrier made things tricky sometimes. But the program leaders were so supportive, and they made sure we felt safe and comfortable.\n\nBy the end of the week, I felt like I could navigate the city and even order food in Japanese! It was such a proud moment when I successfully asked for ramen at a restaurant. One of the best parts of the trip was proving to myself—and my parents—that I could handle being on my own. I learned how to manage my time, take care of my things, and adapt to new situations.\n\nMy parents were so proud when I told them about everything I did, and they said they were not worried about me traveling alone anymore. Japan was an incredible place, and the STEM program made it even more special. I'll never forget the friends I made, the things I learned, and the adventures I had.",
+      "content_zh": "当我第一次得知要去日本参加STEM项目时，我既兴奋又紧张。这是我第一次出国旅行，我不知道会发生什么。我的父母也很担心，他们一直问我是否准备好了，没有他们我能不能照顾好自己。\n\n但在日本度过一周后，我可以诚实地说，这是我一生中最美好的经历之一，而我的父母也不再担心了！这个项目非常棒。我们做了很多有趣的事情，比如参观高科技实验室和学习机器人技术。我甚至还自己动手做了一个迷你机器人！日本的技术非常先进——感觉就像走进了未来。\n\n其中一个亮点是参观科学博物馆，在那里我们看到了可以玩体育项目甚至与人对话的机器人，真是太震撼了！我也很喜欢这个项目将学习与乐趣结合在一起的方式。我们参加了研讨会，在团队中合作解决问题，看到每个人的想法汇聚在一起真是太棒了。\n\n我结交了很多来自不同国家的新朋友，我们因为对科学和技术的热爱而建立了深厚的友谊。看到STEM如何将来自世界各地的人们联系在一起，真是太酷了。当然，也有一些挑战。起初，我有点想家，语言障碍有时也让事情变得棘手。但项目负责人非常支持我们，确保我们感到安全和舒适。\n\n到一周结束时，我感觉自己已经可以在这座城市里自如地活动，甚至可以用日语点餐了！当我在餐厅成功点了一碗拉面时，那种自豪感真是难以形容。这次旅行最棒的部分之一是向自己——还有我的父母——证明了我可以独立应对一切。我学会了如何管理时间、照顾自己的物品，并适应新环境。\n\n当我告诉父母我所做的一切时，他们非常自豪，还说他们不再担心我一个人旅行了。日本是一个令人难以置信的地方，而这个STEM项目让它变得更加特别。我永远不会忘记我结交的朋友、学到的东西以及经历的冒险。",
+      "featured_image": "/Edgoing/Blog_Page/blog5-1.jpg",
+      "carousel_images": [
+        "/Edgoing/Blog_Page/blog5-1.jpg",
+        "/Edgoing/Blog_Page/blog5-2.jpg",
+        "/Edgoing/Blog_Page/blog5-3.jpg"
+      ],
+      "status": "published",
+      "published_at": "2025-03-10T08:00:00Z",
+      "author_en": "Jason",
+      "author_zh": "杰森",
+      "date": "2024-11-23",
+      "grade_en": "Grade 11",
+      "grade_zh": "高二",
+      "project_type_en": "STEM with AI",
+      "project_type_zh": "STEM与AI"
+    }
+  }

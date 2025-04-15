@@ -1,0 +1,23 @@
+{
+  "id": 2,
+  "title_en": "My Summer Camp Experience at Epsom College",
+  "title_zh": "我在爱普森学院的夏令营经历",
+  "slug": "summer-camp-experience-epsom-college",
+  "content_en": "<p>This summer, I had the incredible opportunity to attend a 16-day global camp at Epsom College in the UK. It was a perfect blend of learning, adventure, and cultural exploration.</p><p>During the day, we had ESL classes, which were both challenging and fun. The teachers were amazing—friendly, patient, and always encouraging us to raise our hands and share our ideas.</p><p>After classes, we enjoyed a mix of indoor games and outdoor activities. The outdoor activities were my favorite because we got to play different sports as a team. Basketball was definitely the highlight!</p><p>The evenings were just as exciting. On the first night, we had a movie night, and they screened Mission: Impossible. It was so much fun watching it with my new friends from all over the world.</p><p>One of the best parts of the camp was the excursion trips. We visited museums where I saw fascinating artifacts from ancient Egypt, Rome, and China. I took so many pictures—it felt like I was traveling through time!</p><p>The most inspiring trip was to Oxford University. Walking through the historic campus, surrounded by academics and students, was a dream come true.</p><p>Looking back, this summer camp was more than just a language program—it was a journey of growth, friendship, and discovery. I improved my English, made lifelong friends, and gained a deeper understanding of the world.</p>",
+  "content_zh": "<p>今年夏天，我有幸参加了在英国爱普森学院举办的为期16天的全球夏令营。这是一次学习、冒险和文化探索的完美结合。</p><p>白天，我们上了ESL课程，既充满挑战又非常有趣。老师们非常棒，他们友好、耐心，总是鼓励我们举手发言、分享自己的想法。我感觉我的英语口语每天都在进步！</p><p>课后，我们参加了各种室内游戏和户外活动。户外活动是我的最爱，因为我们可以一起玩不同的团队运动。篮球绝对是亮点！</p><p>晚上的活动也同样精彩。第一天晚上，我们举办了电影之夜，放映了《碟中谍》。和来自世界各地的新朋友一起看电影真是太有趣了。</p><p>夏令营最棒的部分之一是外出游览。我们参观了博物馆，在那里我看到了来自古埃及、罗马和中国的迷人文物。我拍了很多照片，感觉就像穿越了时空！</p><p>最让我印象深刻的是参观牛津大学。走在历史悠久的校园里，周围都是学者和学生，简直像梦想成真。</p><p>回顾这次夏令营，它不仅仅是一个语言项目——更是一次成长、友谊和发现的旅程。我提高了英语水平，结交了终身的朋友，也对世界有了更深的理解。</p>",
+  "excerpt_en": "Join me as I share my unforgettable 16-day summer camp experience at Epsom College in the UK, filled with language learning, cultural adventures, and new friendships.",
+  "excerpt_zh": "跟随我分享在英国爱普森学院难忘的16天夏令营体验，充满语言学习、文化探险和新友谊的美好时光。",
+  "featured_image": "/placeholder.svg",
+  "status": "published",
+  "published_at": "2024-11-01",
+  "author": "Remy Tan, High School Student, Language Camp in UK",
+  "date": "2024-11-01",
+  "category": "education",
+  "primary_category": {
+    "id": 1,
+    "name_en": "Education",
+    "name_zh": "教育",
+    "slug": "education"
+  },
+  "tags": ["summer-camp", "education", "cultural-exchange", "language-learning"]
+}

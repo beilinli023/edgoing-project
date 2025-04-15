@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "custom_forms",
+  "info": {
+    "singularName": "custom-form",
+    "pluralName": "custom-forms",
+    "displayName": "CustomForm"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
+
+    <script type="module" src="/@vite/client"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edgoing - 国际游学教育机构</title>
+    <meta name="description" content="Edgoing国际游学教育 - 提供全球顶尖国际游学、及留学服务" />
+    <meta name="author" content="Edgoing" />
+    <meta property="og:image" content="/og-image.png" />
+    <link rel="icon" href="/docs/ncypp-n1wo9-001.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/docs/ncypp-n1wo9-001.ico" type="image/x-icon">
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script type="module" src="/src/main.tsx?t=1742038388285"></script>
+  </body>
+</html>

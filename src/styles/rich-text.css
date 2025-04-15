@@ -1,0 +1,117 @@
+/* rich-text.css */
+
+.rich-text-content {
+  width: 100%;
+  line-height: 1.6;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* 段落样式 */
+.rich-text-paragraph {
+  margin-bottom: 1rem;
+  white-space: pre-wrap;
+  padding: 0;
+  margin-top: 0;
+}
+
+/* 空行样式 */
+.empty-line {
+  height: 1rem;
+}
+
+/* 标题样式 */
+.rich-text-heading {
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #2d3748;
+}
+
+/* 列表样式 */
+.rich-text-unordered-list,
+.rich-text-ordered-list {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.rich-text-unordered-list {
+  list-style-type: disc;
+}
+
+.rich-text-ordered-list {
+  list-style-type: decimal;
+}
+
+.rich-text-list-item {
+  margin-bottom: 0.5rem;
+}
+
+/* 列表项前缀样式 */
+.list-item {
+  display: block;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* 特殊格式 */
+.rich-text-content strong {
+  font-weight: 700;
+}
+
+.rich-text-content em {
+  font-style: italic;
+}
+
+.rich-text-content .underline {
+  text-decoration: underline;
+}
+
+/* 项目亮点、项目特色等标题样式 */
+.rich-text-content p:first-child strong,
+.rich-text-content p:first-child em {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2d3748;
+  display: block;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+}
+
+/* 添加额外的样式来处理特殊格式 */
+.rich-text-content p {
+  position: relative;
+}
+
+/* 处理项目符号开头的段落 */
+.rich-text-content p:has(span:first-child:not(:only-child)) {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* 处理空行 */
+.rich-text-content p:empty {
+  height: 1rem;
+  margin: 0.5rem 0;
+}
+
+/* 冒号分隔的内容样式 */
+.rich-text-content span strong + span {
+  margin-left: 0.25rem;
+}
+
+/* 项目符号样式 */
+.rich-text-content p {
+  position: relative;
+}
+
+/* 处理以•或-开头的段落 */
+.rich-text-content p span:first-child:first-letter {
+  font-weight: normal;
+}
+
+/* 处理项目符号 */
+.rich-text-content p span:first-child {
+  display: inline-block;
+}

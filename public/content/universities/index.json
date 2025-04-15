@@ -1,0 +1,16 @@
+{
+  "universities": [
+    {
+      "id": 1,
+      "file": "university1.json",
+      "name_en": "Adcote School Malaysia",
+      "name_zh": "马来西亚艾德科特学校",
+      "featured": true
+    }
+  ],
+  "meta": {
+    "total_count": 1,
+    "last_updated": "2025-03-10T01:23:00+08:00",
+    "version": "1.0"
+  }
+}

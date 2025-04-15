@@ -1,0 +1,20 @@
+{
+  "typescript.tsdk": "../node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.reportDeprecated": false,
+  "typescript.tsserver.experimental.enableProjectDiagnostics": false,
+  // 禁用对装饰器的严格类型检查
+  "js/ts.implicitProjectConfig.experimentalDecorators": true,
+  // 禁用特定的TypeScript错误，这些错误与NestJS装饰器有关
+  "typescript.tsserver.ignoredDiagnosticCodes": [
+    "2554", // Expected X arguments, but got Y.
+    "2345", // Argument of type X is not assignable to parameter of type Y.
+    "2339", // Property X does not exist on type Y.
+    "7006", // Parameter X implicitly has an 'any' type.
+    "7053", // Element implicitly has an 'any' type because expression of type X can't be used to index type Y.
+    "7034", // Variable X implicitly has type 'any' in some locations where its type cannot be determined.
+    "7016", // Could not find a declaration file for module X.
+    "2304", // Cannot find name X
+    "2769"  // No overload matches this call
+  ]
+} 

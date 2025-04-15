@@ -1,0 +1,15 @@
+{
+  "data": {
+    "contactInfo": {
+      "phone": "4001153558",
+      "email": "Hello@edgoing.com",
+      "address": "18F, Tower B, China Overseas, 838 S. Huangpi Road, Huangpu, Shanghai",
+      "hours": ""
+    },
+    "socialLinks": [
+      { "name": "Facebook", "url": "https://facebook.com/edgoing", "icon": "facebook" },
+      { "name": "LinkedIn", "url": "https://linkedin.com/company/edgoing", "icon": "linkedin" },
+      { "name": "Instagram", "url": "https://instagram.com/edgoing", "icon": "instagram" }
+    ]
+  }
+}

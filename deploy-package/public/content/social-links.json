@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Facebook",
+      "url": "https://facebook.com/agilecontent",
+      "icon": "facebook"
+    },
+    {
+      "id": 2,
+      "name": "Twitter",
+      "url": "https://twitter.com/agilecontent",
+      "icon": "twitter"
+    },
+    {
+      "id": 3,
+      "name": "LinkedIn",
+      "url": "https://linkedin.com/company/agilecontent",
+      "icon": "linkedin"
+    }
+  ]
+}

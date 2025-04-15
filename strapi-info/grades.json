@@ -1,0 +1,21 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "documentId": "ja9fo31oseiam4mj8nn0148d",
+      "gradename": "小学",
+      "createdAt": "2025-04-06T13:22:45.324Z",
+      "updatedAt": "2025-04-06T13:22:45.324Z",
+      "publishedAt": "2025-04-06T13:22:45.319Z",
+      "locale": "zh"
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "page": 1,
+      "pageSize": 25,
+      "pageCount": 1,
+      "total": 1
+    }
+  }
+}

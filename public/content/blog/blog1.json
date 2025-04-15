@@ -1,0 +1,27 @@
+{
+  "post": {
+    "id": 1,
+    "title_en": "My Awesome Trip to Singapore: The Sunny Island!",
+    "title_zh": "我的新加坡之旅：阳光小岛的冒险！",
+    "slug": "singapore-adventure",
+    "content_en": "Hey guys! So, I just got back from this super cool trip to Singapore, and I have to tell you all about it. It was such a fun mix of learning, exploring, and, of course, eating!\n\nHere’s what went down: We started off with an opening ceremony at NTU (Nanyang Technological University), and let me tell you, this place is HUGE. Like, seriously massive. We got to explore the campus, and the best part was taking pics with the Hive Building. It’s this super iconic building that looks like a beehive (duh, right?). But get this—our student guide told us there are 56 classrooms inside! How crazy is that? I couldn’t even imagine having classes in such a cool-looking building.\n\nAfter the tour, we went for lunch at Song Fa Bak Kut Teh, which is apparently super famous. It was my first time trying it, and it was… interesting. The dough fritters were really good with the soup, but the soup itself was way too peppery for me. Still, it was fun to try something new! Oh, and throughout the trip, we got to try Malay food too. It was so flavorful and different from what I’m used to. I’m definitely a fan now!\n\nThe AI courses at NTU were actually pretty cool. We had these discussions and exchanges about artificial intelligence, and it was mind-blowing to hear how it’s being used in the real world. The best part? At the end of the session, we got to create our own model! It was so satisfying to see something we learned about actually come to life.\n\nNow, let’s talk about the real fun—Sentosa Island! I didn’t even know this before, but Sentosa is actually its own little island. People used to only get there by cable car or car, but a few years ago, they built a walkway, so now it’s super easy to get to. And oh my gosh, the rollercoasters! I screamed my lungs out, but it was SO MUCH FUN. If you ever go to Sentosa, you have to try them. Trust me, it’s worth it.\n\nThis trip was honestly one of the best experiences ever. I got to explore a huge university, try new foods, learn about AI, and have a blast at Sentosa. Singapore is such a cool place—sunny, vibrant, and full of surprises. If you ever get the chance to go, don’t think twice. Just do it!",
+    "content_zh": "大家好！我刚刚从新加坡回来，这趟旅行真的太棒了，我一定要跟你们分享一下！这次旅行有学习、有探索，当然还有美食！\n\n下面就来聊聊我的经历吧～我们一开始参加了南洋理工大学（NTU）的开营仪式，说实话，这个学校真的超级大！我们参观了校园，最酷的是和 The Hive 大楼拍了照。这栋楼看起来像个蜂巢（名字就是这么来的嘛），但最让我震惊的是，学生导游告诉我们，里面竟然有 56 间教室！这也太夸张了吧？我完全无法想象在这么酷的建筑里上课是什么感觉。\n\n参观完校园后，我们去吃了有名的松发肉骨茶。这是我第一次尝试肉骨茶，感觉……挺特别的。油条配汤很好吃，但汤本身对我来说太辣了，胡椒味太重。不过，尝试新东西还是挺有趣的！对了，整个旅行中我们还吃了很多马来菜，味道超级丰富，和我平时吃的东西很不一样。我现在已经是马来菜的粉丝了！\n\n说实话，NTU 的人工智能课程还挺有意思的。我们讨论了 AI 的应用，听了很多实际案例，感觉打开了新世界的大门。最棒的是，课程结束后我们还自己动手做了一个模型！看到学到的知识变成实际的东西，真的超有成就感。\n\n现在来说说最开心的部分——圣淘沙岛！我之前都不知道，圣淘沙其实是一个独立的小岛。以前人们只能坐缆车或开车去，但几年前他们建了一条步行道，现在去圣淘沙方便多了。还有，环球影城的过山车真的太刺激了！我全程尖叫，但真的超级好玩！如果你去圣淘沙，一定要试试，绝对不会后悔！\n\n这次旅行真的是我经历过最棒的事情之一。我参观了一所超大的大学，尝试了新美食，学习了人工智能，还在圣淘沙玩得超嗨。新加坡真的是一个又阳光、又充满活力的地方，到处都是惊喜。如果你有机会去，千万别犹豫，赶紧出发吧！",
+    "featured_image": "/Edgoing/Blog_Page/blog1-2.jpg",
+    "carousel_images": [
+      "/Edgoing/Blog_Page/blog1-1.jpg",
+      "/Edgoing/Blog_Page/blog1-2.jpg",
+      "/Edgoing/Blog_Page/blog1-3.jpg",
+      "/Edgoing/Blog_Page/blog1-4.jpg",
+      "/Edgoing/Blog_Page/blog1-5.jpg"
+    ],
+    "status": "published",
+    "published_at": "2025-01-10T08:00:00Z",
+    "author_en": "Max",
+    "author_zh": "马克斯",
+    "date": "2024-10-13",
+    "grade_en": "Grade 11",
+    "grade_zh": "高二",
+    "project_type_en": "STEM with AI",
+    "project_type_zh": "STEM与AI"
+  }
+}

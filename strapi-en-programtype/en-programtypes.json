@@ -1,0 +1,21 @@
+{
+  "data": [
+    {
+      "id": 4,
+      "documentId": "byxmrjinyxwng4qcuusg43as",
+      "programname": "Academic Enrichment",
+      "createdAt": "2025-04-06T13:25:26.659Z",
+      "updatedAt": "2025-04-06T13:25:26.659Z",
+      "publishedAt": "2025-04-06T13:25:26.662Z",
+      "locale": "en"
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "page": 1,
+      "pageSize": 25,
+      "pageCount": 1,
+      "total": 1
+    }
+  }
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favicon Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        canvas {
+            border: 1px solid #ddd;
+            background-color: white;
+        }
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .instructions {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edgoing Favicon Generator</h1>
+    
+    <div class="instructions">
+        <h3>使用说明:</h3>
+        <ol>
+            <li>上传您的"ed"标志图片</li>
+            <li>预览并调整图标</li>
+            <li>点击"下载Favicon"按钮下载.ico文件</li>
+            <li>将下载的文件替换到 /public/favicon.ico</li>
+        </ol>
+    </div>
+    
+    <div class="container">
+        <div class="controls">
+            <input type="file" id="imageLoader" accept="image/*">
+            <button id="downloadBtn">下载Favicon</button>
+        </div>
+        
+        <div>
+            <h3>预览 (32x32):</h3>
+            <canvas id="canvas32" width="32" height="32"></canvas>
+        </div>
+        
+        <div>
+            <h3>预览 (16x16):</h3>
+            <canvas id="canvas16" width="16" height="16"></canvas>
+        </div>
+    </div>
+
+    <script>
+        const imageLoader = document.getElementById('imageLoader');
+        const canvas32 = document.getElementById('canvas32');
+        const ctx32 = canvas32.getContext('2d');
+        const canvas16 = document.getElementById('canvas16');
+        const ctx16 = canvas16.getContext('2d');
+        const downloadBtn = document.getElementById('downloadBtn');
+        
+        let img = new Image();
+        
+        imageLoader.addEventListener('change', handleImage, false);
+        downloadBtn.addEventListener('click', downloadFavicon, false);
+        
+        function handleImage(e) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                img.onload = function() {
+                    // 绘制32x32版本
+                    ctx32.clearRect(0, 0, canvas32.width, canvas32.height);
+                    ctx32.drawImage(img, 0, 0, 32, 32);
+                    
+                    // 绘制16x16版本
+                    ctx16.clearRect(0, 0, canvas16.width, canvas16.height);
+                    ctx16.drawImage(img, 0, 0, 16, 16);
+                }
+                img.src = event.target.result;
+            }
+            reader.readAsDataURL(e.target.files[0]);
+        }
+        
+        function downloadFavicon() {
+            // 创建一个隐藏的canvas用于合并图标
+            const tempCanvas = document.createElement('canvas');
+            tempCanvas.width = 32;
+            tempCanvas.height = 32;
+            const tempCtx = tempCanvas.getContext('2d');
+            
+            // 将32x32图标绘制到临时canvas
+            tempCtx.drawImage(canvas32, 0, 0);
+            
+            // 转换为Blob并下载
+            tempCanvas.toBlob(function(blob) {
+                const link = document.createElement('a');
+                link.download = 'favicon.ico';
+                link.href = URL.createObjectURL(blob);
+                link.click();
+            }, 'image/x-icon');
+        }
+    </script>
+</body>
+</html>

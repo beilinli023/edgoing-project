@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>视频播放测试</title>
+    <meta charset="utf-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .video-container {
+            margin-bottom: 30px;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .status {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .success {
+            background-color: #dff0d8;
+            color: #3c763d;
+        }
+        .error {
+            background-color: #f2dede;
+            color: #a94442;
+        }
+    </style>
+</head>
+<body>
+    <h1>视频播放测试页面</h1>
+    <p>这个页面用于测试不同路径的视频文件是否可以正常播放。</p>
+    
+    <div class="video-container">
+        <h2>测试1: 原始路径 /Edgoing/video/162.mp4</h2>
+        <video id="video1" controls width="400" oncanplay="videoLoaded(1)" onerror="videoError(1)">
+            <source src="/Edgoing/video/162.mp4" type="video/mp4">
+            您的浏览器不支持HTML5视频标签。
+        </video>
+        <div id="status1" class="status"></div>
+    </div>
+    
+    <div class="video-container">
+        <h2>测试2: 无前缀路径 /video/162.mp4</h2>
+        <video id="video2" controls width="400" oncanplay="videoLoaded(2)" onerror="videoError(2)">
+            <source src="/video/162.mp4" type="video/mp4">
+            您的浏览器不支持HTML5视频标签。
+        </video>
+        <div id="status2" class="status"></div>
+    </div>
+    
+    <div class="video-container">
+        <h2>测试3: 完整URL路径</h2>
+        <video id="video3" controls width="400" oncanplay="videoLoaded(3)" onerror="videoError(3)">
+            <source id="fullUrlSource" src="" type="video/mp4">
+            您的浏览器不支持HTML5视频标签。
+        </video>
+        <div id="status3" class="status"></div>
+    </div>
+    
+    <div class="video-container">
+        <h2>测试4: 原始路径 /Edgoing/video/164.mp4</h2>
+        <video id="video4" controls width="400" oncanplay="videoLoaded(4)" onerror="videoError(4)">
+            <source src="/Edgoing/video/164.mp4" type="video/mp4">
+            您的浏览器不支持HTML5视频标签。
+        </video>
+        <div id="status4" class="status"></div>
+    </div>
+    
+    <script>
+        // 设置完整URL路径
+        document.addEventListener('DOMContentLoaded', function() {
+            const fullUrl = window.location.origin + '/Edgoing/video/162.mp4';
+            document.getElementById('fullUrlSource').src = fullUrl;
+            document.getElementById('video3').load();
+            
+            // 打印环境信息
+            console.log('环境信息:', {
+                origin: window.location.origin,
+                href: window.location.href,
+                pathname: window.location.pathname
+            });
+        });
+        
+        // 视频加载成功处理
+        function videoLoaded(id) {
+            const statusEl = document.getElementById(`status${id}`);
+            statusEl.className = 'status success';
+            statusEl.innerHTML = `<strong>成功!</strong> 视频已成功加载，可以播放。`;
+            console.log(`视频 #${id} 加载成功`);
+        }
+        
+        // 视频加载失败处理
+        function videoError(id) {
+            const videoEl = document.getElementById(`video${id}`);
+            const statusEl = document.getElementById(`status${id}`);
+            statusEl.className = 'status error';
+            
+            let sourceUrl = '';
+            if (videoEl.querySelector('source')) {
+                sourceUrl = videoEl.querySelector('source').src;
+            } else {
+                sourceUrl = videoEl.src;
+            }
+            
+            statusEl.innerHTML = `<strong>错误!</strong> 视频无法加载。<br>URL: ${sourceUrl}<br>错误代码: ${videoEl.error ? videoEl.error.code : '未知'}<br>`;
+            console.error(`视频 #${id} 加载失败`, videoEl.error);
+            
+            // 尝试直接获取视频文件状态
+            fetch(sourceUrl, { method: 'HEAD' })
+                .then(response => {
+                    const message = `服务器响应: ${response.status} ${response.statusText}`;
+                    statusEl.innerHTML += message + '<br>';
+                    console.log(message);
+                    return response.headers;
+                })
+                .then(headers => {
+                    const contentType = headers.get('Content-Type');
+                    const contentLength = headers.get('Content-Length');
+                    if (contentType) {
+                        statusEl.innerHTML += `Content-Type: ${contentType}<br>`;
+                    }
+                    if (contentLength) {
+                        statusEl.innerHTML += `文件大小: ${Math.round(contentLength/1024/1024 * 100) / 100} MB<br>`;
+                    }
+                })
+                .catch(error => {
+                    statusEl.innerHTML += `获取文件信息失败: ${error.message}`;
+                    console.error('获取文件信息失败:', error);
+                });
+        }
+    </script>
+</body>
+</html>

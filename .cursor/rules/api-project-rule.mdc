@@ -1,0 +1,71 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Your rule content
+
+- You can @ files here好的，参考你提供的文档（特别是 `api.cursorrule` 和 `strapidoc.md`）以及当前的讨论，我为你整理了这个项目中 API 开发的核心规范：
+
+**API 调用规范 (API Call Specifications):**
+
+1.  **统一服务层调用**:
+    *   所有对 Strapi API 的直接调用应封装在相应的服务（例如 `BlogService`）中。
+    *   控制器（Controller）应调用服务层的方法，而不是直接使用 `HttpService` 调用 Strapi。
+    *   服务层方法应处理 URL 构建、添加认证头和基本请求逻辑。
+2.  **遵循 Strapi 最佳实践**:
+    *   使用 `ConfigService` 管理 Strapi URL 和 API Token。
+    *   请求头中必须包含 `Authorization: Bearer YOUR_STRAPI_TOKEN`。
+    *   端点使用复数形式（如 `/api/blogposts`, `/api/grades`）。
+    *   优先使用简单、扁平化的查询参数 (`key=value`)。
+    *   **性能优化**: 生产环境中明确指定 `populate` 和 `fields` 参数，避免使用 `populate=*` 获取不必要的数据。开发和调试时 `populate=*` 可用于探索。 (`strapidoc.md` 强调)
+    *   使用 `locale` 参数获取特定语言内容。
+3.  **日志记录**:
+    *   在服务层发起 Strapi 请求前，使用 `Logger` 记录完整的请求 URL 和关键参数（如 `locale`, `populate`, `fields`）。
+
+**错误处理与数据验证 (Error Handling & Data Validation):**
+
+1.  **服务层错误处理**:
+    *   在服务层调用 Strapi API 时，必须使用 `try/catch` 块。
+    *   捕获错误时，使用 `Logger.error` 记录详细信息，包括错误消息、请求 URL、Strapi 返回的状态码和响应体（如果有）。
+    *   根据情况，可以将原始错误重新抛出，或封装成 NestJS 的标准异常（如 `HttpException` 的子类）。
+2.  **控制器层错误处理**:
+    *   控制器调用服务层方法时，也应使用 `try/catch`，主要处理服务层抛出的特定异常或进行最终的用户友好错误转换（如返回 `InternalServerErrorException`）。
+3.  **输入验证**:
+    *   在控制器方法参数上，严格使用 NestJS 内建管道（Pipes）如 `ParseIntPipe`, `DefaultValuePipe` 和自定义 DTO 结合 `class-validator` 对查询参数（Query）、路径参数（Param）和请求体（Body）进行验证和转换。
+4.  **响应数据验证**:
+    *   **关键步骤**: 从 Strapi 获取响应后，在服务层或映射逻辑中，**必须**验证返回数据的结构是否符合预期（例如，`response.data` 是否存在，`response.data.data` 是否是数组，`attributes` 是否存在）。
+    *   对需要访问的嵌套属性（如 `grade.data.attributes`）进行存在性检查（使用 `?.` 可选链）。
+    *   对于类型不确定的外部数据，优先使用 `unknown` 而非 `any`，并在使用前进行类型检查或安全的类型断言。 (`api.cursorrule` 强调)
+
+**项目结构规范 (Project Structure Specifications):**
+
+1.  **模块化**: 遵循 NestJS 的模块化原则。每个主要功能域（如 `blog`）应有自己的模块 (`src/modules/blog/blog.module.ts`)。
+2.  **职责分离**:
+    *   `*.controller.ts`: 处理 HTTP 请求路由、参数验证（通过 Pipes）、调用 Service、格式化最终响应。
+    *   `*.service.ts`: 包含核心业务逻辑、与外部 API（Strapi）或数据库的交互、数据处理和转换。
+    *   `*.interface.ts` / `*.dto.ts` / `*.entity.ts`: 定义数据结构、接口、数据传输对象（用于验证）和实体（如果使用 ORM）。
+3.  **共享模块**: 如果存在跨模块使用的工具函数或服务，应放在 `src/shared` 模块中。
+4.  **核心模块**: 全局构造（如全局异常过滤器、拦截器）可考虑放在 `src/core` 模块。
+
+**安全与性能规则 (Security & Performance Rules):**
+
+1.  **认证安全**: API Token 必须通过环境变量和 `ConfigService` 管理，绝不能硬编码。确保 Strapi API Token 权限最小化。
+2.  **输入安全**: 严格验证所有来自客户端的输入，防止注入攻击或非预期行为。
+3.  **性能 (API)**: 如“API 调用规范”所述，精确使用 `populate` 和 `fields` 减少 Strapi 负载和网络传输。
+4.  **性能 (缓存)**: 对于不经常变动的 Strapi 数据（如 Program Types, Grades），考虑在 `BlogService` 中添加缓存机制（如使用 NestJS 的 `CacheModule`）。
+
+**文档规范 (Documentation Specifications):**
+
+1.  **代码文档**:
+    *   使用 JSDoc 为所有公共的类、方法、复杂函数和类型接口添加注释，解释其用途、参数和返回值。 (`api.cursorrule` 要求)
+    *   注释应简洁明了，解释“为什么”而非简单重复代码“做什么”。
+2.  **API 文档**:
+    *   如果此 NestJS 应用本身作为 API 供其他服务（如前端）调用，应使用 `@nestjs/swagger` 自动生成 OpenAPI (Swagger) 文档，清晰描述端点、参数、请求/响应模型。
+3.  **内部设计文档**:
+    *   维护和更新项目内的 Markdown 文档（如 `docs/` 目录下的文件），记录 Strapi 内容模型结构、字段映射规则 (`api-field-mapping.md`)、重要的架构决策和 Strapi API 使用指南 (`strapidoc.md`)。确保文档与代码实现保持同步。
+
+遵循这些规范将有助于提高项目的可维护性、健壮性和性能。
+
+- You can use markdown but dont have to

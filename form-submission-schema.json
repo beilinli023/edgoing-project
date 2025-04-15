@@ -1,0 +1,78 @@
+{
+  "kind": "collectionType",
+  "collectionName": "form_submissions",
+  "info": {
+    "singularName": "form-submission",
+    "pluralName": "form-submissions",
+    "displayName": "Form Submission",
+    "description": "Store form submissions from the website"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "role": {
+      "type": "enumeration",
+      "enum": [
+        "student",
+        "parent",
+        "teacher",
+        "school_admin",
+        "other"
+      ],
+      "required": true
+    },
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "lastName": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "schoolName": {
+      "type": "string"
+    },
+    "gradeLevel": {
+      "type": "enumeration",
+      "enum": [
+        "elementary",
+        "middle",
+        "high",
+        "college",
+        "other"
+      ]
+    },
+    "province": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "destinations": {
+      "type": "string"
+    },
+    "interests": {
+      "type": "string"
+    },
+    "questions": {
+      "type": "text"
+    },
+    "agreeToReceiveInfo": {
+      "type": "boolean",
+      "default": false
+    },
+    "submittedAt": {
+      "type": "datetime"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": 1,
+  "name_en": "Adcote School Malaysia",
+  "name_zh": "马来西亚艾德科特学校",
+  "location_en": "Kuala Lumpur Metropolitan Area, Malaysia",
+  "location_zh": "马来西亚吉隆坡大都会区",
+  "programs_en": "Kindergarten, Primary, Junior High, Senior High (IGCSE & A-Level), ESL enhancement, CCA extracurricular activities",
+  "programs_zh": "幼儿园、小学、初中、高中（IGCSE 和 A-Level）、ESL 英语强化课程、CCA 课外活动",
+  "image": "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=800&q=80",
+  "featured_image": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&q=80",
+  "description_en": "Adcote School Malaysia is the fourth overseas branch of the prestigious British institution Adcote School (UK), established after the China campus. It has won the Best British Independent School Award in 2020 and 2021, and ranked 83rd among nearly 3000 UK secondary schools in 2023. In just five years, 13 graduates from Adcote's global campuses have been admitted to Oxford and Cambridge Universities. The school integrates Eastern and Western educational philosophies, fostering students with a global perspective, innovation, independence, leadership, and social responsibility through a holistic approach.",
+  "description_zh": "马来西亚艾德科特学校是英国著名学府艾德科特学校（UK）的第四个海外分校，继中国校区之后建立。该校曾荣获 2020 年和 2021 年最佳英国独立学校奖，并在 2023 年英国近 3000 所中学中排名第 83 名。在短短五年内，来自 Adcote 全球校区的 13 名毕业生被牛津大学和剑桥大学录取。学校融合了东西方教育理念，通过全球赋能、全面发展、身心健康以及成果导向的方式，培养具有传承、创新、独立性、领导力、全球视野和社会责任感的学生。",
+  "gallery_images": [
+    "https://images.unsplash.com/photo-1596495577886-d920f1e7b8bd?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1581091870622-50c0d3e4f7a5?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+  ],
+  "highlights_en": "Located 40 minutes from KL International Airport, Adcote School Malaysia offers a premium campus with global standards, safe environment, cost-effective fees, and a focus on innovation, independence, and leadership. Highlights include:\n- **Geographical Location**: Situated in the Kuala Lumpur Metropolitan Area, only 40 minutes from KL International Airport.\n- **Premium Campus**: Built to international standards, managed by Chinese shareholders, providing on-campus apartments.\n- **Safe Environment**: Reasonable fees, high cost-effectiveness.",
+  "highlights_zh": "距离吉隆坡国际机场 40 分钟车程，马来西亚艾德科特学校提供国际标准的高端校园、安全的环境、具有竞争力的费用，并注重创新、独立性和领导力的培养。主要亮点包括：\n- **地理位置**：位于吉隆坡大都会区，距离吉隆坡国际机场仅 40 分钟车程。\n- **高端校园**：按照国际标准建设，由中国股东管理，提供校内公寓。\n- **安全环境**：费用合理，性价比高。",
+  "facilities_en": "Swimming pool, tennis courts, squash courts, bowling alley, SPA, libraries, laboratories, gym, sports centers, student apartments, and medical support. Campus facilities include:\n- **Main Entrance (South)**: Swimming pool, tennis courts, squash courts, bowling alley, SPA, dining hall.\n- **Teaching Block, Library, Laboratories, Dining Hall, Gym**: Golf course, dining center.\n- **Outdoor Sports Field (Track, Football, Rugby)**: Extreme sports center (rock climbing, water sports, skateboarding, archery, racing).\n- **Indoor Sports Hall (Rock Climbing, Badminton, Basketball, Football)**: Residential area (long-term rental for parents).\n- **Student Apartments, Medical Center, Apartment Facilities**: 400 meters from petrol station and commercial area.\n- **Man-Made Lake**: Planned for kayaking; equestrian facilities are under planning, with an existing equestrian center.",
+  "facilities_zh": "游泳池、网球场、壁球场、保龄球馆、SPA、图书馆、实验室、健身房、体育中心、学生公寓和医疗支持。校园设施包括：\n- **主入口（南侧）**：游泳池、网球场、壁球场、保龄球馆、SPA、餐厅。\n- **教学楼、图书馆、实验室、食堂、健身房**：高尔夫球场、餐饮中心。\n- **户外体育场（跑道、足球、橄榄球）**：极限运动中心（攀岩、水上运动、滑板、射箭、赛车）。\n- **室内体育馆（攀岩、羽毛球、篮球、足球）**：住宅区（长期出租给家长）。\n- **学生公寓、医疗中心、公寓设施**：距离加油站和商业区 400 米。\n- **人工湖**：计划开设皮划艇项目；马术设施正在规划中，现有马术中心。",
+  "academics_en": "Adcote School Malaysia provides education from kindergarten to senior high school, with specialized programs like IGCSE, A-Level, ESL enhancement, and a wide range of extracurricular activities to ensure holistic development. The academic program includes:\n- **Academic Stages**: Kindergarten, Primary, Junior High, Senior High (IGCSE & A-Level).\n- **Specialized Programs**: ESL English Enhancement, CCA Extracurricular Activities.\n- **Extracurricular Activities**: Golf, rock climbing, swimming, karting, karate, ball sports, languages, mathematics, cooking, crafts, etc.",
+  "academics_zh": "马来西亚艾德科特学校提供从幼儿园到高中的教育，包括 IGCSE、A-Level、ESL 英语强化课程以及丰富的课外活动，确保学生的全面发展。学术项目包括：\n- **学段**：幼儿园、小学、初中、高中（IGCSE 和 A-Level）。\n- **特色课程**：ESL 英语强化课程、CCA 课外活动。\n- **课外活动**：高尔夫、攀岩、游泳、卡丁车、空手道、球类运动、语言、数学、烹饪、手工艺等。",
+  "admission_en": "Admission involves an application fee, interviews, and assessments (e.g., CAT4, OPT). The admission process includes:\n- **Application Fee**: MYR 250.\n- **Admission Requirements**: Online/in-person interview and assessment (CAT4, OPT, etc., depending on grade level).\n- **Admission Steps**:\n  1. Written Test/Interview\n  2. Offer Letter\n  3. Payment\n  4. Approval Letter (Non-EMGS)\n  5. Visa-Free Entry\n  6. Registration\n  7. Conversion to Student/Dependent Visa",
+  "admission_zh": "入学流程包括申请费、面试和评估（如 CAT4、OPT）。入学步骤包括：\n- **申请费**：250 马币。\n- **入学要求**：线上/线下面试及评估（CAT4、OPT 等，视年级而定）。\n- **入学步骤**：\n  1. 笔试/面试\n  2. 录取通知书\n  3. 缴费\n  4. 批准信（非 EMGS）\n  5. 免签入境\n  6. 报到注册\n  7. 转换学生签证/陪读签证",
+  "ranking": "Top 100 in Malaysia",
+  "founded": "2023",
+  "website": "https://adcotemalaysia.edu.my"
+}

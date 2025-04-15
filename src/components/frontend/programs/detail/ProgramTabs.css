@@ -1,0 +1,70 @@
+/* ProgramTabs.css */
+
+/* 基本HTML内容样式 */
+.html-content, .rich-text-content {
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* 表格样式 */
+.html-content table, .rich-text-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.html-content th,
+.html-content td,
+.rich-text-content th,
+.rich-text-content td {
+  border: 1px solid #e2e8f0;
+  padding: 0.5rem;
+}
+
+.html-content th,
+.rich-text-content th {
+  background-color: #f7fafc;
+  font-weight: 600;
+}
+
+/* 标题样式 */
+.html-content h3,
+.rich-text-content h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #2d3748;
+}
+
+/* 图片网格样式 */
+.html-content .grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.html-content .grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.html-content img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.html-content .text-center {
+  text-align: center;
+}
+
+.html-content .mt-2 {
+  margin-top: 0.5rem;
+}
+
+/* 响应式调整 */
+@media (max-width: 640px) {
+  .html-content .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+}

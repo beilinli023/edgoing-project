@@ -1,0 +1,37 @@
+import { Controller, Get, Query, Res, HttpStatus } from '@nestjs/common';
+import { Response } from 'express';
+
+/**
+ * 兼容旧式API路径的控制器
+ * 这个控制器将 /blog-posts 路径重定向到 /blog
+ */
+@Controller('blog-posts')
+export class BlogCompatController {
+  constructor() {
+    // 空构造函数，确保没有依赖
+  }
+
+  /**
+   * 将旧的路径重定向到新路径
+   */
+  @Get()
+  redirectToBlog(
+    @Res() res: Response,
+    @Query('locale') locale?: string,
+    @Query('page') page?: string,
+    @Query('limit') limit?: string
+  ) {
+    let url = '/proxy/blog';
+    const params: string[] = [];
+
+    if (locale) params.push(`locale=${locale}`);
+    if (page) params.push(`page=${page}`);
+    if (limit) params.push(`limit=${limit}`);
+
+    if (params.length > 0) {
+      url += '?' + params.join('&');
+    }
+
+    return res.redirect(HttpStatus.FOUND, url);
+  }
+} 

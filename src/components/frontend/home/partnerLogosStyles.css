@@ -1,0 +1,190 @@
+/* 合作伙伴Logo墙样式 */
+.partner-logos-container {
+  background: linear-gradient(to right, rgba(248, 250, 252, 0.5), rgba(255, 255, 255, 1), rgba(248, 250, 252, 0.5));
+  border-radius: 0;
+  margin: 4rem 0;
+  padding: 4rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.05);
+}
+
+/* 添加装饰性分隔线 */
+.partner-logos-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(59, 130, 246, 0.15), rgba(249, 115, 22, 0.15), transparent);
+}
+
+.partner-logos-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  right: 5%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(249, 115, 22, 0.15), rgba(59, 130, 246, 0.15), transparent);
+}
+
+.partner-logos-title {
+  color: #000000; /* 改为黑色 */
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.partner-logos-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 25%;
+  right: 25%;
+  height: 3px;
+  background: linear-gradient(to right, rgba(59, 130, 246, 0.7), rgba(249, 115, 22, 0.7));
+  border-radius: 3px;
+}
+
+.partner-logos-subtitle {
+  color: #64748b;
+  font-size: 1rem;
+  text-align: center;
+  max-width: 600px;
+  margin: 1.5rem auto 3rem;
+  line-height: 1.6;
+}
+
+.partner-logos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3.5rem 5rem; /* 增加间距，使布局更加宽松 */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 移动端每行显示2个Logo */
+@media (max-width: 767px) {
+  .partner-logos-grid {
+    gap: 3rem 3rem;
+  }
+
+  .partner-logo-item {
+    width: calc(50% - 1.5rem); /* 每行2个 */
+    max-width: 200px; /* 进一步增加最大宽度 */
+  }
+
+  .partner-logos-title {
+    font-size: 1.5rem;
+  }
+
+  .partner-logos-subtitle {
+    font-size: 0.875rem;
+  }
+}
+
+/* 平板端每行显示3个Logo */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .partner-logos-grid {
+    gap: 3.5rem 4rem;
+  }
+
+  .partner-logo-item {
+    width: calc(33.33% - 2.67rem); /* 每行3个 */
+    max-width: 240px; /* 进一步增加最大宽度 */
+  }
+}
+
+/* 桌面端每行显示4个Logo */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .partner-logos-container {
+    padding: 4rem 2rem;
+  }
+
+  .partner-logos-grid {
+    gap: 4rem 5rem;
+    flex-wrap: wrap; /* 允许多行显示 */
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .partner-logo-item {
+    width: calc(25% - 3.75rem); /* 每行4个 */
+    max-width: 280px; /* 进一步增加最大宽度 */
+  }
+}
+
+/* 大屏幕每行显示5个Logo */
+@media (min-width: 1280px) {
+  .partner-logos-container {
+    padding: 4rem 2rem;
+  }
+
+  .partner-logos-grid {
+    gap: 4rem 5rem;
+    flex-wrap: wrap; /* 允许多行显示 */
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .partner-logo-item {
+    width: calc(20% - 4rem); /* 每行5个 */
+    max-width: 300px; /* 进一步增加最大宽度 */
+  }
+}
+
+.partner-logo-item {
+  height: 120px; /* 根据要求增加高度为120px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  transform-origin: center;
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+  padding: 0.5rem;
+}
+
+/* 为每个Logo添加不同的动画延迟 */
+.partner-logo-item:nth-child(1) { animation-delay: 0.1s; }
+.partner-logo-item:nth-child(2) { animation-delay: 0.2s; }
+.partner-logo-item:nth-child(3) { animation-delay: 0.3s; }
+.partner-logo-item:nth-child(4) { animation-delay: 0.4s; }
+.partner-logo-item:nth-child(5) { animation-delay: 0.5s; }
+.partner-logo-item:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.partner-logo-image {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  min-width: 180px; /* 增加最小宽度至1.5倍 */
+  object-fit: contain;
+  filter: grayscale(30%); /* 进一步降低灰度效果，增强可见度 */
+  opacity: 1; /* 完全不透明，使图标更加清晰 */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.partner-logo-item:hover {
+  transform: scale(1.05);
+}
+
+.partner-logo-item:hover .partner-logo-image {
+  filter: grayscale(0);
+  opacity: 1;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px -5px rgba(0, 0, 0, 0.15);
+}

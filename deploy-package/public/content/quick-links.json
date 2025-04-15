@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "text_en": "Explore Programs",
+      "text_zh": "探索项目",
+      "url": "/programs"
+    },
+    {
+      "text_en": "Study Abroad",
+      "text_zh": "留学",
+      "url": "/study-abroad"
+    },
+    {
+      "text_en": "View Blog",
+      "text_zh": "浏览博客",
+      "url": "/blog"
+    },
+    {
+      "text_en": "Meet EdGoing",
+      "text_zh": "关于EdGoing",
+      "url": "/about"
+    },
+    {
+      "text_en": "FAQ",
+      "text_zh": "常见问题",
+      "url": "/learn-how"
+    },
+    {
+      "text_en": "Let's Plan",
+      "text_zh": "开始规划",
+      "url": "/start-planning"
+    }
+  ]
+}
