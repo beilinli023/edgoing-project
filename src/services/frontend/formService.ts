@@ -140,36 +140,18 @@ export const submitNewsletterSubscription = async (email: string, language = 'en
       // 即使本地保存失败，也继续处理API请求
     }
 
-    // 直接发送到Strapi
-    console.log('直接发送订阅请求到Strapi');
+    // 通过Express中间层发送到Strapi
+    console.log('通过Express中间层发送订阅请求');
 
-    // Strapi API配置
-    const STRAPI_URL = 'http://localhost:1337';
-    const STRAPI_API_TOKEN = 'ef45d960b23a2c2843220cf09f5884fdcf574c89fe941c67cd21aa80f7e3a52df99db3198b7b9707803e381195c9f13e53b6735a4dc0b094ec35b6e8c6a4c64328cd413ca97383f12e01b3dbfa5a017104b7318168ccf962ff11f83b1cc6b4ee336511c3f4e1dcbe4ec38ea3425d161b337fe77dea6cb6ad3b54d8d7b1c17850';
-
-    // 准备请求数据
-    const subscriptionData = {
-      data: {
-        email: email,
-        subscribed_at: new Date().toISOString()
-      }
-    };
-
-    // 发送请求到Strapi
+    // 发送请求到Express中间层
     const response = await axios.post(
-      `${STRAPI_URL}/api/newsletter-subscriptions`,
-      subscriptionData,
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${STRAPI_API_TOKEN}`
-        }
-      }
+      '/api/newsletter-subscriptions',
+      { email: email }
     );
 
     console.log('订阅响应:', response.data);
 
-    if (response.data && response.data.data) {
+    if (response.data && response.data.success) {
       toast.success(
         language === 'zh'
           ? '订阅成功！感谢您的关注。'
@@ -186,9 +168,9 @@ export const submitNewsletterSubscription = async (email: string, language = 'en
     console.error('Error submitting newsletter subscription:', error);
 
     // 处理已存在邮箱的情况
-    if (error.response && error.response.data && error.response.data.error &&
-        error.response.data.error.message &&
-        error.response.data.error.message.includes('unique')) {
+    if (error.response && error.response.data &&
+        error.response.data.message &&
+        error.response.data.message.includes('已订阅')) {
       toast.info(
         language === 'zh'
           ? '该邮箱已订阅，无需重复提交。'
