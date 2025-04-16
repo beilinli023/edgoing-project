@@ -26,7 +26,7 @@ module.exports = {
         console.log('尝试发送启动测试邮件...');
         try {
           await strapi.plugins.email.services.email.send({
-            to: ['libei002@gmail.com', '229678@qq.com'],
+            to: ['hello@edgoing.com'],
             from: process.env.SMTP_USER,
             subject: '📧 Strapi服务器启动通知',
             text: '这是一封测试邮件，表明Strapi服务器已成功启动。',
@@ -79,7 +79,7 @@ module.exports = {
             const fullName = `${firstName} ${lastName}`.trim() || '未提供姓名';
 
             // 收件人邮箱
-            const recipientEmails = ['libei002@gmail.com', '229678@qq.com'];
+            const recipientEmails = ['hello@edgoing.com'];
             console.log(`准备发送邮件到: ${recipientEmails.join(', ')}`);
 
             // 使用nodemailer直接发送邮件，确保可靠性

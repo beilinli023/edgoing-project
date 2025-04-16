@@ -31,7 +31,7 @@ module.exports = {
       const fullName = `${firstName} ${lastName}`.trim() || '未提供姓名';
 
       // 收件人邮箱
-      const recipientEmails = ['libei002@gmail.com', '229678@qq.com'];
+      const recipientEmails = ['hello@edgoing.com'];
       console.log(`准备发送邮件到: ${recipientEmails.join(', ')}`);
 
       // 使用nodemailer直接发送邮件，确保可靠性

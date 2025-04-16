@@ -1,6 +1,6 @@
 /**
  * 发送表单提交通知邮件
- * 
+ *
  * 使用方法：
  * 1. 确保Strapi服务器正在运行
  * 2. 在Strapi项目根目录下执行：node scripts/send-form-notification.js
@@ -33,9 +33,9 @@ async function sendFormNotification() {
     });
 
     console.log('准备发送表单提交通知邮件...');
-    
+
     // 收件人邮箱
-    const recipientEmails = ['libei002@gmail.com', '229678@qq.com'];
+    const recipientEmails = ['hello@edgoing.com'];
     console.log(`准备发送邮件到: ${recipientEmails.join(', ')}`);
 
     // 当前时间

@@ -58,11 +58,11 @@ async function testEmail() {
     console.log('✅ 测试邮件已成功发送到QQ邮箱:', qqInfo.messageId);
 
     // 发送测试邮件到Gmail
-    console.log('准备发送测试邮件到libei002@gmail.com...');
+    console.log('准备发送测试邮件到hello@edgoing.com...');
 
     const gmailInfo = await qqTransporter.sendMail({
       from: '"Augment AI" <229678@qq.com>',
-      to: 'libei002@gmail.com',
+      to: 'hello@edgoing.com',
       subject: '📧 测试邮件 - 发送到Gmail',
       text: '这是一封测试邮件，用于验证邮件发送功能是否正常工作。这次我们测试发送到Gmail。',
       html: `
