@@ -1,0 +1,46 @@
+{
+  "post": {
+    "id": 4,
+    "title_en": "US Language Camp: Learning, Friends, and Fun!",
+    "title_zh": "美国语言夏令营：学习、友谊与乐趣！",
+    "slug": "us-language-camp",
+    "content_en": "I had an amazing time at the camp! The camp canteen served buffet-style meals, so I could try everything—pasta, salads, burgers, and desserts! It was a delicious way to experience American food.\n\nWe also went on exciting trips, like visiting MIT and its museum, where I saw futuristic technology that blew my mind. Another trip was to Plymouth, where we learned about American history. It was so interesting!\n\nIn the next few days, I attended a seminar called 'How to Choose the Right School,' which helped me think about my future. I also got tips for the TOEFL and SAT exams, which will help me stand out when applying to schools. The teachers were super supportive, and I feel much more confident speaking English now.\n\nEvenings were the best part! We had karaoke nights where we sang our favorite songs, disco parties where we danced nonstop, and movie nights where we watched films together. My favorite was the Hawaiian dance party. There was also a cultural showcase, where we shared traditions from our countries. It was so cool to learn about different cultures.\n\nThis camp taught me so much more than English. I learned how to write a strong resume and essay for college applications. I even got to talk to university admissions counselors, who gave me great advice. But the best part was making friends from all over the world. We've already promised to stay in touch! This camp was one of the best experiences of my life.",
+    "content_zh": "我在夏令营度过了非常愉快的时光！夏令营的食堂提供自助餐，所以我可以尝试各种美食——意大利面、沙拉、汉堡和甜点！这是体验美国美食的美味方式。\n\n我们还参加了一些令人兴奋的旅行，比如参观了麻省理工学院及其博物馆，那里的未来科技让我大开眼界。另一次旅行是去普利茅斯，我们在那里了解了美国历史，非常有趣！\n\n接下来的几天，我参加了一个名为"如何选择合适学校"的讲座，这让我对未来有了更多的思考。我还获得了关于托福和SAT考试的技巧，这些将帮助我在申请学校时脱颖而出。老师们非常支持我，现在我对说英语更有信心了。\n\n晚上的活动是最棒的！我们有卡拉OK之夜，可以唱我们最喜欢的歌曲；还有迪斯科舞会，大家跳个不停；还有电影之夜，我们一起看电影。我最喜欢的是夏威夷舞会。还有文化展示，我们分享了各自国家的传统，了解不同文化真是太酷了。\n\n这次夏令营教会我的不仅仅是英语。我学会了如何为大学申请写一份出色的简历和论文。我甚至有机会与大学招生顾问交流，他们给了我很多宝贵的建议。但最棒的是，我结交了来自世界各地的朋友，我们已经约定要保持联系！这次夏令营是我一生中最美好的经历之一。",
+    "excerpt_en": "Join me on my unforgettable journey at the US Language Camp! From delicious American food to exciting trips to MIT, from valuable college preparation seminars to fun-filled evening activities. Learn how this experience shaped my future and helped me make friends from around the world.",
+    "excerpt_zh": "跟随我一起体验难忘的美国语言夏令营之旅！从美味的美国美食到令人兴奋的麻省理工学院之行，从宝贵的大学准备讲座到充满乐趣的晚间活动。了解这段经历如何塑造了我的未来，以及如何帮助我结交来自世界各地的朋友。",
+    "featured_image": "/Edgoing/Blog_Page/blog4-1.jpg",
+    "carousel_images": [
+      "/Edgoing/Blog_Page/blog4-1.jpg",
+      "/Edgoing/Blog_Page/blog4-2.jpg"
+    ],
+    "status": "published",
+    "published_at": "2025-03-13T08:00:00Z",
+    "author_en": "Leo",
+    "author_zh": "Leo",
+    "date": "2025-01-08",
+    "grade_en": "Grade 11",
+    "grade_zh": "高二",
+    "project_type_en": "US MIT",
+    "project_type_zh": "US MIT",
+    "category": {
+      "id": "1",
+      "name_en": "Study Abroad",
+      "name_zh": "海外学习",
+      "slug": "study-abroad"
+    },
+    "tags": [
+      {
+        "id": "1",
+        "name_en": "Language Camp",
+        "name_zh": "语言夏令营",
+        "slug": "language-camp"
+      },
+      {
+        "id": "2",
+        "name_en": "MIT",
+        "name_zh": "麻省理工",
+        "slug": "mit"
+      }
+    ]
+  }
+}

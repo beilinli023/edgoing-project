@@ -1,0 +1,66 @@
+# EdGoing项目
+
+这是EdGoing项目的完整包，包括前端、后端和所有必要的数据。本项目已配置为可以从GitHub克隆并一比一还原到服务器上，确保包含所有数据和内容模块，以便前端页面正常显示。
+
+## 快速开始
+
+请参考以下文档进行安装和部署：
+
+- [GitHub部署指南](GITHUB_DEPLOY.md) - 从GitHub克隆并部署项目的详细步骤
+- [服务器部署指南](服务器部署指南.md) - 在服务器上部署项目的详细步骤
+- [本地开发环境启动说明](启动说明.md) - 在本地开发环境中启动项目
+- [宝塔服务器完整安装指南](宝塔完整安装指南.md) - 在宝塔面板上安装项目
+
+## 项目结构
+
+- `my-strapi-backend`: Strapi后端
+- `server-express`: Express中间层
+- `src`: 前端源代码
+- `strapi-data-export`: 导出的Strapi数据（确保前端页面正常显示）
+- `strapi-uploads-export`: 导出的上传文件
+
+## 数据导入
+
+项目包含了预先导出的Strapi数据，可以使用以下命令导入：
+
+```bash
+# 确保已安装依赖
+npm install
+
+# 导入Strapi数据
+node import-strapi-data.mjs
+
+# 恢复上传的文件
+mkdir -p my-strapi-backend/public/uploads
+cp -r strapi-uploads-export/* my-strapi-backend/public/uploads/
+```
+
+## 环境配置
+
+请确保正确配置以下环境文件：
+
+1. `my-strapi-backend/.env` - Strapi后端配置
+2. `.env` - 项目根目录配置
+3. `server-express/.env` - Express中间层配置
+
+特别重要的是配置正确的Strapi API Token，这对于前端页面正常显示至关重要。
+
+## 启动项目
+
+在完成数据导入和环境配置后，可以使用以下命令启动项目：
+
+```bash
+# 构建前端
+npm run build:prod
+
+# 使用PM2启动所有服务
+pm2 start ecosystem.config.js
+
+# 或者使用提供的启动脚本
+chmod +x start-express-services.sh
+./start-express-services.sh
+```
+
+## 许可证
+
+[MIT](LICENSE)

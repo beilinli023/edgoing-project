@@ -1,0 +1,75 @@
+# 前端应用配置 | Frontend Application Configuration
+server {
+    listen 80;
+    server_name your-domain.com www.your-domain.com;
+
+    # 重定向到HTTPS | Redirect to HTTPS
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    server_name your-domain.com www.your-domain.com;
+
+    # SSL配置 | SSL Configuration
+    ssl_certificate /www/server/panel/vhost/cert/your-domain.com/fullchain.pem;
+    ssl_certificate_key /www/server/panel/vhost/cert/your-domain.com/privkey.pem;
+
+    # 前端静态文件 | Frontend Static Files
+    root /www/wwwroot/edgoing/dist;
+    index index.html;
+
+    # 处理SPA路由 | Handle SPA Routes
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # API代理到Express中间层 | API Proxy to Express Middleware
+    location /api/ {
+        proxy_pass http://localhost:3001/;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+    # 错误页面 | Error Pages
+    error_page 404 /index.html;
+
+    # 日志 | Logs
+    access_log /www/wwwlogs/edgoing/frontend-access.log;
+    error_log /www/wwwlogs/edgoing/frontend-error.log;
+}
+
+# Strapi管理面板配置 | Strapi Admin Panel Configuration
+server {
+    listen 80;
+    server_name admin.your-domain.com;
+
+    # 重定向到HTTPS | Redirect to HTTPS
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    server_name admin.your-domain.com;
+
+    # SSL配置 | SSL Configuration
+    ssl_certificate /www/server/panel/vhost/cert/admin.your-domain.com/fullchain.pem;
+    ssl_certificate_key /www/server/panel/vhost/cert/admin.your-domain.com/privkey.pem;
+
+    # 代理到Strapi | Proxy to Strapi
+    location / {
+        proxy_pass http://localhost:1337;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+    # 日志 | Logs
+    access_log /www/wwwlogs/edgoing/strapi-access.log;
+    error_log /www/wwwlogs/edgoing/strapi-error.log;
+}

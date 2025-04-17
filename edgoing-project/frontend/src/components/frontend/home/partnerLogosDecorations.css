@@ -1,0 +1,77 @@
+/* 装饰性元素样式 */
+.partner-logos-decoration {
+  position: absolute;
+  opacity: 0.02; /* 降低透明度，使其更加微妙 */
+  pointer-events: none;
+  z-index: 0;
+}
+
+.partner-logos-decoration-1 {
+  top: 15%;
+  left: 5%;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.5) 0%, rgba(59, 130, 246, 0) 70%);
+  animation: float 12s ease-in-out infinite;
+}
+
+.partner-logos-decoration-2 {
+  bottom: 10%;
+  right: 5%;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.5) 0%, rgba(249, 115, 22, 0) 70%);
+  animation: float 10s ease-in-out infinite reverse;
+}
+
+.partner-logos-decoration-3 {
+  top: 60%;
+  left: 10%;
+  width: 60px;
+  height: 60px;
+  transform: translateY(-50%) rotate(15deg);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(249, 115, 22, 0.3) 100%);
+  border-radius: 15px;
+  animation: rotate 18s linear infinite;
+}
+
+.partner-logos-decoration-4 {
+  top: 25%;
+  right: 8%;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid rgba(59, 130, 246, 0.2);
+  border-radius: 8px;
+  animation: pulse 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+}

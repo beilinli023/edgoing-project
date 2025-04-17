@@ -1,0 +1,22 @@
+{
+  "name": "edgoing-project",
+  "version": "1.0.0",
+  "description": "EdGoing Project with Reorganized Structure",
+  "main": "index.js",
+  "scripts": {
+    "start:frontend": "cd frontend && npm start",
+    "start:strapi": "cd backend/strapi && npm start",
+    "start:express": "cd backend/express && node index.mjs",
+    "start:all": "node scripts/deployment/start-all-services.js",
+    "build:frontend": "cd frontend && npm run build",
+    "build:strapi": "cd backend/strapi && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "frontend",
+    "backend/strapi",
+    "backend/express"
+  ]
+}

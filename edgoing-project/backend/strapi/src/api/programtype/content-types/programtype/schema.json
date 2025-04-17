@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "programtypes",
+  "info": {
+    "singularName": "programtype",
+    "pluralName": "programtypes",
+    "displayName": "programtype",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "programname": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "blogpost": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::blogpost.blogpost",
+      "mappedBy": "programtype"
+    },
+    "programs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::program.program",
+      "mappedBy": "programtypes"
+    }
+  }
+}

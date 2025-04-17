@@ -1,0 +1,13 @@
+
+/* Add custom olive colors */
+.bg-olive-500 {
+  background-color: rgba(173, 181, 115, 0.85);
+}
+
+.bg-olive-600 {
+  background-color: rgba(153, 161, 95, 0.9);
+}
+
+.text-olive-100 {
+  color: rgba(255, 255, 255, 0.9);
+}

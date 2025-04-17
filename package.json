@@ -20,7 +20,17 @@
     "start:frontend": "npm run dev:frontend",
     "start:backend:wait": "wait-on tcp:1337 -t 120000 && npm run start:backend",
     "start:frontend:wait": "wait-on tcp:3001 -t 30000 && npm run start:frontend",
-    "start:all": "concurrently --kill-others \"npm:start:strapi\" \"npm:start:backend:wait\" \"npm:start:frontend:wait\""
+    "start:all": "concurrently --kill-others \"npm:start:strapi\" \"npm:start:backend:wait\" \"npm:start:frontend:wait\"",
+    "start:express": "cd server-express && node index.mjs",
+    "start:express:dev": "cd server-express && nodemon index.mjs",
+    "start:express:wait": "wait-on tcp:1337 -t 120000 && npm run start:express",
+    "start:all:express": "concurrently --kill-others \"npm:start:strapi\" \"npm:start:express:wait\" \"npm:start:frontend:wait\"",
+    "stop:all": "./stop-all-services.sh",
+    "build:prod": "NODE_ENV=production npm run build",
+    "start:strapi:prod": "cd my-strapi-backend && npm run start",
+    "start:express:prod": "cd server-express && NODE_ENV=production node index.mjs",
+    "start:frontend:prod": "vite preview --port 8083",
+    "deploy": "./deploy-baota.sh"
   },
   "dependencies": {
     "@hello-pangea/dnd": "^16.6.0",
@@ -123,7 +133,8 @@
     "tailwindcss": "^3.4.11",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
-    "vite": "^5.4.1"
+    "vite": "^5.4.1",
+    "wait-on": "^8.0.3"
   },
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
